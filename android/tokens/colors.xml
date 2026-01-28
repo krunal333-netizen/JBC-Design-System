@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand -->
+    <color name="jbc_cyan_dark">#03FDDA</color>
+    <color name="jbc_cyan_light">#00BFA5</color>
+    <color name="jbc_gold_dark">#FFD700</color>
+    <color name="jbc_gold_light">#FFCC00</color>
+    
+    <!-- Neutral -->
+    <color name="jbc_bg_dark">#0B0E14</color>
+    <color name="jbc_bg_light">#F8F9FA</color>
+    <color name="jbc_text_primary_dark">#FFFFFF</color>
+    <color name="jbc_text_primary_light">#1C2128</color>
+    
+    <!-- Semantic -->
+    <color name="jbc_error">#DA3633</color>
+    <color name="jbc_success">#2EA043</color>
+</resources>

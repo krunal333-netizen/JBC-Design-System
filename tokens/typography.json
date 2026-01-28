@@ -1,0 +1,22 @@
+{
+  "typography": {
+    "fontFamily": {
+      "main": "Plus Jakarta Sans, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "fontSize": {
+      "h1": "64px",
+      "h2": "48px",
+      "h3": "32px",
+      "h4": "24px",
+      "body": "16px",
+      "small": "14px",
+      "tiny": "12px"
+    },
+    "fontWeight": {
+      "bold": "700",
+      "semibold": "600",
+      "regular": "400"
+    }
+  }
+}

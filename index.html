@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBC Finance Design System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              jbc: {
+                cyan: 'var(--jbc-cyan)',
+                gold: 'var(--jbc-gold)',
+                dark: '#0B0E14',
+                surface: '#161B22',
+                light: '#F8F9FA',
+                lightSurface: '#FFFFFF',
+                icon: {
+                  primary: 'var(--jbc-icon-primary)',
+                  secondary: 'var(--jbc-icon-secondary)',
+                  neutral: 'var(--jbc-icon-neutral)',
+                },
+                error: '#DA3633',
+                success: '#2EA043',
+                entity: {
+                  youtube: 'var(--jbc-entity-youtube)',
+                  x: 'var(--jbc-entity-x)',
+                  spotify: 'var(--jbc-entity-spotify)',
+                  instagram: 'var(--jbc-entity-instagram)',
+                  facebook: 'var(--jbc-entity-facebook)',
+                  google: 'var(--jbc-entity-google)',
+                  amazon: 'var(--jbc-entity-amazon)',
+                  ebay: 'var(--jbc-entity-ebay)',
+                  linkedin: 'var(--jbc-entity-linkedin)',
+                  yandex: 'var(--jbc-entity-yandex)',
+                  cmc: 'var(--jbc-entity-cmc)',
+                  coingecko: 'var(--jbc-entity-coingecko)',
+                  crypto: 'var(--jbc-entity-crypto)',
+                  dapps: 'var(--jbc-entity-dapps)',
+                  view: 'var(--jbc-entity-view)',
+                  like: 'var(--jbc-entity-like)',
+                  follow: 'var(--jbc-entity-follow)',
+                  subscribe: 'var(--jbc-entity-subscribe)',
+                  comment: 'var(--jbc-entity-comment)',
+                  share: 'var(--jbc-entity-share)',
+                  repost: 'var(--jbc-entity-repost)',
+                  post: 'var(--jbc-entity-post)',
+                }
+              }
+            },
+            zIndex: {
+              'jbc-base': 'var(--jbc-z-base)',
+              'jbc-dropdown': 'var(--jbc-z-dropdown)',
+              'jbc-modal': 'var(--jbc-z-modal)',
+              'jbc-tooltip': 'var(--jbc-z-tooltip)',
+              'jbc-toast': 'var(--jbc-z-toast)',
+            },
+            boxShadow: {
+              'jbc-low': '0 2px 4px rgba(0,0,0,0.1)',
+              'jbc-mid': '0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05)',
+              'jbc-high': '0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)',
+              'jbc-cyan': '0 0 20px rgba(3, 253, 218, 0.3)',
+              'jbc-gold': '0 0 20px rgba(255, 215, 0, 0.2)',
+              'jbc-destructive': '0 0 20px rgba(218, 54, 51, 0.2)',
+              'jbc-light-low': 'var(--jbc-shadow-light-low)',
+              'jbc-light-mid': 'var(--jbc-shadow-light-mid)',
+              'jbc-light-high': 'var(--jbc-shadow-light-high)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+        :root {
+          /* Core Brand Palette - Default (Dark) */
+          --jbc-cyan: #03FDDA;
+          --jbc-gold: #FFD700;
+          
+          /* Icon Tokens - Default (Dark) */
+          --jbc-icon-primary: #03FDDA;
+          --jbc-icon-secondary: #FFD700;
+          --jbc-icon-neutral: #8B949E;
+          --jbc-icon-stroke: 1.5;
+
+          /* Elevation Tokens */
+          --jbc-elevation-low: 0 2px 4px rgba(0,0,0,0.1);
+          --jbc-elevation-mid: 0 10px 20px rgba(0,0,0,0.15);
+          --jbc-elevation-high: 0 20px 40px rgba(0,0,0,0.25);
+
+          /* Z-Index Registry */
+          --jbc-z-base: 1;
+          --jbc-z-dropdown: 60;
+          --jbc-z-modal: 100;
+          --jbc-z-tooltip: 150;
+          --jbc-z-toast: 200;
+
+          /* Semantic Color Tokens - Default (Dark) */
+          --jbc-color-bg: #0B0E14;
+          --jbc-color-surface: #161B22;
+          --jbc-color-border: #30363D;
+          --jbc-color-text-primary: #E6EDF3;
+          --jbc-color-text-secondary: #8B949E;
+          --jbc-color-action: var(--jbc-cyan);
+          --jbc-color-error: #DA3633;
+          --jbc-color-success: #2EA043;
+          
+          /* Entity Colors - Dark Defaults */
+          --jbc-entity-youtube: #FF0000;
+          --jbc-entity-x: #000000;
+          --jbc-entity-spotify: #1DB954;
+          --jbc-entity-instagram: #E4405F;
+          --jbc-entity-facebook: #1877F2;
+          --jbc-entity-google: #4285F4;
+          --jbc-entity-amazon: #FF9900;
+          --jbc-entity-ebay: #E53238;
+          --jbc-entity-linkedin: #0A66C2;
+          --jbc-entity-yandex: #FF0000;
+          --jbc-entity-cmc: #1D3FD1;
+          --jbc-entity-coingecko: #8CC63F;
+          --jbc-entity-crypto: #03FDDA;
+          --jbc-entity-dapps: #FFD700;
+          --jbc-entity-view: #8B949E;
+          --jbc-entity-like: #DA3633;
+          --jbc-entity-follow: #03FDDA;
+          --jbc-entity-subscribe: #FFD700;
+          --jbc-entity-comment: #1877F2;
+          --jbc-entity-share: #2EA043;
+          --jbc-entity-repost: #2EA043;
+          --jbc-entity-post: #7057FF;
+
+          /* Component-Specific Request Tokens */
+          --jbc-surface-warning: rgba(218, 54, 51, 0.05);
+          --jbc-border-warning: rgba(218, 54, 51, 0.2);
+          --jbc-error: #DA3633;
+
+          /* Geometry Scale (4pt Baseline) */
+          --jbc-space-1: 4px;
+          --jbc-space-2: 8px;
+          --jbc-space-3: 12px;
+          --jbc-space-4: 16px;
+          --jbc-space-5: 20px;
+          --jbc-space-6: 24px;
+          --jbc-space-8: 32px;
+          --jbc-radius-sm: 8px;
+          --jbc-radius-md: 12px;
+          --jbc-radius-lg: 16px;
+          --jbc-radius-xl: 24px;
+
+          /* Elevation & Layering */
+          --jbc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+          --jbc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          --jbc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+          --jbc-z-header: 40;
+          --jbc-z-sidebar: 50;
+
+          /* Motion Tokens */
+          --jbc-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+          --jbc-ease-standard-out: cubic-bezier(0, 0, 0.2, 1);
+          --jbc-duration-fast: 150ms;
+          --jbc-duration-base: 300ms;
+        }
+
+        /* Logical Property Utilities (RTL Support) */
+        .ms-1 { margin-inline-start: var(--jbc-space-1); }
+        .ms-2 { margin-inline-start: var(--jbc-space-2); }
+        .ms-3 { margin-inline-start: var(--jbc-space-3); }
+        .ms-4 { margin-inline-start: var(--jbc-space-4); }
+        .me-1 { margin-inline-end: var(--jbc-space-1); }
+        .me-2 { margin-inline-end: var(--jbc-space-2); }
+        .me-3 { margin-inline-end: var(--jbc-space-3); }
+        .me-4 { margin-inline-end: var(--jbc-space-4); }
+        .ps-1 { padding-inline-start: var(--jbc-space-1); }
+        .ps-2 { padding-inline-start: var(--jbc-space-2); }
+        .ps-3 { padding-inline-start: var(--jbc-space-3); }
+        .ps-4 { padding-inline-start: var(--jbc-space-4); }
+        .pe-1 { padding-inline-end: var(--jbc-space-1); }
+        .pe-2 { padding-inline-end: var(--jbc-space-2); }
+        .pe-3 { padding-inline-end: var(--jbc-space-3); }
+        .pe-4 { padding-inline-end: var(--jbc-space-4); }
+        .start-0 { inset-inline-start: 0; }
+        .end-0 { inset-inline-end: 0; }
+        .text-start { text-align: start; }
+        .text-end { text-align: end; }
+
+        /* RTL-specific transforms */
+        [dir="rtl"] .jbc-rtl-flip {
+          transform: scaleX(-1);
+        }
+
+        /* Container Utilities */
+        .jbc-container-boxed {
+          max-width: 1200px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .jbc-container-fluid {
+          width: 100%;
+        }
+
+        /* Density Utility (Opt-in Layer) */
+        .density-compact {
+          --jbc-space-3: 8px;
+          --jbc-space-4: 12px;
+          --jbc-space-5: 16px;
+        }
+
+        .light {
+          /* Fixed: Darker cyan for light mode to ensure contrast */
+          --jbc-cyan: #00BFA5;
+          --jbc-gold: #E6C200;
+          
+          /* Icon Tokens - Light Mode */
+          --jbc-icon-primary: #00BFA5;
+          --jbc-icon-secondary: #E6C200;
+          --jbc-icon-neutral: #424A53;
+
+          --jbc-color-bg: #F8F9FA;
+          --jbc-color-surface: #FFFFFF;
+          --jbc-color-border: #C8D1D9;
+          --jbc-color-text-primary: #1C2128;
+          --jbc-color-text-secondary: #424A53;
+          --jbc-color-action: var(--jbc-cyan);
+          
+          /* Entity Colors - Light Overrides */
+          --jbc-entity-youtube: #E53935;
+          --jbc-entity-x: #000000;
+          --jbc-entity-spotify: #1AA34A;
+          --jbc-entity-instagram: #D81B60;
+          --jbc-entity-facebook: #0D47A1;
+          --jbc-entity-google: #1976D2;
+          --jbc-entity-amazon: #E68A00;
+          --jbc-entity-ebay: #B71C1C;
+          --jbc-entity-linkedin: #004182;
+          --jbc-entity-yandex: #D32F2F;
+          --jbc-entity-cmc: #1565C0;
+          --jbc-entity-coingecko: #689F38;
+          --jbc-entity-crypto: #00BFA5;
+          --jbc-entity-dapps: #E6C200;
+          --jbc-entity-view: #57606A;
+          --jbc-entity-like: #B91C1C;
+          --jbc-entity-follow: #00BFA5;
+          --jbc-entity-subscribe: #E6C200;
+          --jbc-entity-comment: #1976D2;
+          --jbc-entity-share: #166534;
+          --jbc-entity-repost: #166534;
+          --jbc-entity-post: #5E35B1;
+
+          --jbc-surface-warning: rgba(218, 54, 51, 0.05);
+          --jbc-border-warning: rgba(218, 54, 51, 0.2);
+
+          --jbc-elevation-low: 0 2px 4px rgba(0,0,0,0.05);
+          --jbc-elevation-mid: 0 8px 16px rgba(0,0,0,0.08);
+          --jbc-elevation-high: 0 16px 32px rgba(0,0,0,0.12);
+
+          --jbc-shadow-light-low: 0 4px 12px rgba(0, 191, 165, 0.08);
+          --jbc-shadow-light-mid: 0 12px 32px rgba(0, 191, 165, 0.12);
+          --jbc-shadow-light-high: 0 24px 64px rgba(0, 191, 165, 0.16);
+        }
+
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+
+        /* JBC Icon System Utilities */
+        .jbc-icon {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          line-height: 1;
+          color: currentColor;
+          transition: transform var(--jbc-duration-base) var(--jbc-ease-standard-out), 
+                      opacity var(--jbc-duration-base) var(--jbc-ease-standard-out),
+                      stroke-width 0.2s var(--jbc-ease-standard);
+        }
+
+        /* Standard Icon Sizes */
+        .jbc-icon-16 { width: 16px; height: 16px; font-size: 16px; }
+        .jbc-icon-20 { width: 20px; height: 20px; font-size: 20px; }
+        .jbc-icon-24 { width: 24px; height: 24px; font-size: 24px; }
+        .jbc-icon-32 { width: 32px; height: 32px; font-size: 32px; }
+        .jbc-icon-48 { width: 48px; height: 48px; font-size: 48px; }
+
+        /* Animation Presets (State-driven Transitions) */
+        .jbc-icon-fade { transition: opacity 120ms var(--jbc-ease-standard-out); }
+        .jbc-icon-fade:hover { opacity: 0.7; }
+
+        .jbc-icon-scale { transition: transform 200ms var(--jbc-ease-standard-out); }
+        .jbc-icon-scale:hover { transform: scale(1.04); }
+
+        .jbc-icon-rotate { transition: transform 200ms var(--jbc-ease-standard-out); }
+        .jbc-icon-rotate:hover { transform: rotate(8deg); }
+
+        /* Accessibility: Reduce motion */
+        @media (prefers-reduced-motion: reduce) {
+          .jbc-icon, 
+          .jbc-icon-fade, 
+          .jbc-icon-scale, 
+          .jbc-icon-rotate {
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+          }
+        }
+
+        /* Scoped Design System Layer */
+        .jbc-app {
+          --jbc-opacity-disabled: 0.4;
+          --jbc-scale-active: 0.96;
+        }
+
+        .jbc-app [data-is-loading="true"] {
+          pointer-events: none;
+          opacity: 0.7;
+          cursor: wait;
+        }
+
+        .jbc-app [data-is-disabled="true"] {
+          pointer-events: none;
+          opacity: var(--jbc-opacity-disabled);
+          filter: grayscale(0.5);
+        }
+
+        .jbc-app .has-error {
+          border-color: var(--jbc-error) !important;
+          animation: jbc-shake 0.4s var(--jbc-ease-standard);
+        }
+
+        @keyframes jbc-shake {
+          0%, 100% { transform: translateX(0); }
+          25% { transform: translateX(-4px); }
+          75% { transform: translateX(4px); }
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--jbc-color-bg);
+            color: var(--jbc-color-text-primary);
+            transition: background-color var(--jbc-duration-base) var(--jbc-ease-standard), color var(--jbc-duration-base) var(--jbc-ease-standard);
+        }
+        
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        :focus-visible {
+          outline: 2px solid var(--jbc-color-action);
+          outline-offset: 2px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--jbc-color-border);
+            border-radius: 4px;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+
+        @media print {
+          @page {
+            margin: 20mm;
+            size: A4 portrait;
+          }
+
+          * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            break-inside: avoid;
+          }
+          
+          aside, 
+          .theme-toggle-btn, 
+          .no-print, 
+          .lg\:hidden.fixed.top-0,
+          button:not(.jbc-print-visible),
+          input,
+          textarea {
+            display: none !important;
+          }
+
+          pre, 
+          .jbc-code-block {
+            display: none !important;
+          }
+
+          code:not(.jbc-keep-token) {
+            display: none !important;
+          }
+
+          .jbc-keep-token {
+            display: inline !important;
+          }
+
+          main {
+            margin-left: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+          }
+
+          .fixed, .absolute {
+            position: relative !important;
+            top: auto !important;
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            z-index: auto !important;
+            transform: none !important;
+          }
+
+          section {
+            page-break-before: always !important;
+            break-before: page !important;
+            padding-top: 1rem !important;
+            margin-bottom: 2rem !important;
+            display: block !important;
+            width: 100% !important;
+          }
+
+          section:first-of-type {
+            page-break-before: avoid !important;
+            break-before: avoid !important;
+          }
+
+          h1, h2, h3, h4, h5, h6 {
+            break-after: avoid;
+          }
+
+          .bg-white, .dark\:bg-\[\#161B22\], .group {
+            page-break-inside: avoid !important;
+          }
+
+          body {
+            background-color: #FFFFFF !important;
+            color: #1C2128 !important;
+            font-size: 12pt;
+          }
+
+          header {
+            page-break-after: always;
+            break-after: page;
+          }
+
+          .text-white { color: #1C2128 !important; }
+          .dark\:text-white { color: #1C2128 !important; }
+          .opacity-40, .opacity-50, .opacity-60, .opacity-70, .opacity-80 { opacity: 1 !important; color: #424A53 !important; }
+          
+          .group div[style*="background-color"] {
+            border: 1px solid rgba(0,0,0,0.1);
+          }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-native": "https://esm.sh/react-native@^0.83.1",
+    "react-native-svg": "https://esm.sh/react-native-svg@^15.15.1",
+    "jszip": "https://esm.sh/jszip@3.10.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.474.0",
+    "@tabler/icons-react": "https://esm.sh/@tabler/icons-react@^3.30.0",
+    "@phosphor-icons/react": "https://esm.sh/@phosphor-icons/react@^2.1.7",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="jbc-app">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>

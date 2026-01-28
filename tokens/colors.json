@@ -1,0 +1,30 @@
+
+{
+  "color": {
+    "bg": {
+      "app": { "dark": "#0B0E14", "light": "#F8F9FA" },
+      "surface": { "dark": "#161B22", "light": "#FFFFFF" }
+    },
+    "text": {
+      "primary": { "dark": "#FFFFFF", "light": "#1C2128" },
+      "secondary": { "dark": "#8B949E", "light": "#424A53" }
+    },
+    "icon": {
+      "primary": { "dark": "#03FDDA", "light": "#00BFA5" },
+      "secondary": { "dark": "#FFD700", "light": "#E6C200" },
+      "neutral": { "dark": "#8B949E", "light": "#424A53" }
+    },
+    "accent": {
+      "primary": { "dark": "#03FDDA", "light": "#00BFA5" },
+      "secondary": { "dark": "#FFD700", "light": "#E6C200" }
+    },
+    "border": {
+      "default": { "dark": "#30363D", "light": "#C8D1D9" }
+    },
+    "state": {
+      "success": { "hex": "#2EA043" },
+      "error": { "hex": "#DA3633" },
+      "warning": { "hex": "#FFCC00" }
+    }
+  }
+}
