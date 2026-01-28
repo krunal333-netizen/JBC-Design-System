@@ -63,8 +63,7 @@ const BreadcrumbSystem: React.FC<{ theme?: 'light' | 'dark' }> = ({ theme = 'dar
                 <i className="ri-checkbox-circle-line text-jbc-success mt-0.5" />
                 <div>
                   <span className="font-bold block text-black dark:text-white">When to Use</span>
-                  Recommended for page hierarchies deeper than 2 levels. Use when navigating from a list
-                  view to an entity view (e.g., Vaults {'>'} ETH Vault).
+                  Recommended for page hierarchies deeper than 2 levels. Use when navigating from a list view to an entity view (e.g., Vaults &gt; ETH Vault).
                 </div>
               </li>
               <li className="flex gap-3">
