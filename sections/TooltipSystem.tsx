@@ -100,8 +100,21 @@ const TooltipSystem: React.FC<{ theme?: 'light' | 'dark' }> = ({ theme = 'dark' 
               &lt;/JBCTooltip&gt;<br/><br/>
               <span className="text-[#8B949E] italic">// Rich content support</span><br/>
               &lt;JBCTooltip <br/>
+<<<<<<< HEAD
               &nbsp;&nbsp;content={<span className="text-[#FF7B72]">&lt;div&gt;</span>Estimated TVL <span className="text-[#A5D6FF] font-bold">$1.2B</span><span className="text-[#FF7B72]">&lt;/div&gt;</span>}<br/>
               &nbsp;&nbsp;maxWidth={<span className="text-[#A5D6FF]">250</span>}<br/>
+=======
+              &nbsp;&nbsp;content={
+  <>
+    <span className="text-[#FF7B72]">&lt;div&gt;</span>
+    Estimated TVL 
+    <span className="text-[#A5D6FF] font-bold">$1.2B</span>
+    <span className="text-[#FF7B72]">&lt;/div&gt;</span>
+  </>
+}
+maxWidth={250}
+<br/>
+>>>>>>> 598f195 (Initial commit - JBC Design System)
               &gt;<br/>
               &nbsp;&nbsp;&lt;span&gt;Liquidity Pool&lt;/span&gt;<br/>
               &lt;/JBCTooltip&gt;
